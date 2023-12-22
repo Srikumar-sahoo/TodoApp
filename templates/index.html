@@ -51,22 +51,24 @@
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                {% for todo in allTodo %}
-                <tr>
-                    <th scope="row">{{loop.index}}</th>
-                    <td>{{todo.title}}</td>
-                    <td>{{todo.desc}}</td>
-                    <td>{{todo.data_created}}</td>
-                    <td>
-                        <a href="/update/{{todo.sno}}" type="button"
-                            class="btn btn-outline-success btn-sm mx-2">Update</a>
-                        <a href="/delete/{{todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</a>
-                    </td>
-                </tr>
+
+            {% for todo in allTodo %}
+            </tbody>
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{todo.title}}</td>
+                <td>{{todo.desc}}</td>
+                <td>{{todo.data_created}}</td>
+                <td>
+                    <a href="/update/{{todo.sno}}" type="button" class="btn btn-outline-success btn-sm mx-2">Update</a>
+                    <a href="/delete/{{todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</a>
+                </td>
+            </tr>
+
+
+            {% endfor %}
             </tbody>
         </table>
-        {% endfor %}
         {% endif %}
 
 
